@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.49.0'
+project:
+    name: devOrgCCITest
+    package:
+        name: devOrgCCITest
+        api_version: '52.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/devOrgCCITest/tests
+            options:
+                outputdir: robot/devOrgCCITest/results
+
+    robot_testdoc:
+        options:
+            path: robot/devOrgCCITest/tests
+            output: robot/devOrgCCITest/doc/devOrgCCITest_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
